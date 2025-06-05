@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NDA Auto Emporium</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+  body {
+    background: radial-gradient(circle, #1a1a1a, #000000);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+  }
+  header {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  section {
+    text-align: center;
+    padding: 2rem;
+  }
+  footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .hero-section {
+    position: relative;
+    background: url('https://c1.wallpaperflare.com/preview/508/250/386/porsche-oldtimer-m%C3%BChlheim-mulhouse.jpg') no-repeat center center/cover;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .hero-section .container {
+    position: relative;
+    z-index: 2;
+  }
+  .button-group {
+    margin-top: 20px;
+  }
+  .btn-primary, .btn-success, .btn-secondary {
+    background: #8B0000;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    transition: 0.3s;
+    margin-right: 15px;
+  }
+  .btn-primary:hover, .btn-success:hover, .btn-secondary:hover {
+    background: #FF0000;
+  }
+  .btn-outline-light {
+    border: 2px solid white;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    color: white;
+    transition: 0.3s;
+  }
+  .btn-outline-light:hover {
+    background: white;
+    color: #1a1a1a;
+  }
+  .navbar {
+    background-color: #1a1a1a !important;
+    border-bottom: 2px solid #8B0000;
+  }
+  .navbar-brand, .nav-link {
+    color: #fff !important;
+  }
+  .nav-link:hover {
+    color: #8B0000 !important;
+  }
+
+.modal-content {
+  background: #1a1a1a;
+  border: 1px solid #8B0000;
+}
+.btn-close-white {
+  filter: invert(1);
+}
+</style>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">NDA Auto Emporium</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="/WADFILE/products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="/WADFILE/about.html">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Navigation Bar Ends -->
+  
+  <!-- Header Section -->
+  <header class="hero-section" id="dashboard">
+    <div class="overlay"></div>
+    <div class="container text-center">
+      <h1 class="display-4">Welcome to NDA Auto Emporium</h1>
+      <p class="lead">Your trusted platform for seamless vehicle rentals and exchanges.</p>
+      <div class="button-group">
+        <a href="/WADFILE/templates/member.html" id="login-btn" class="btn btn-primary btn-lg" style="cursor: pointer;">Become a Member</a>
+        <a href="/WADFILE/products.html" class="btn btn-outline-light btn-lg">Explore Products</a>
+      </div>
+    </div>
+  </header>
+
+    <!-- ======= Login Modal ======= -->
+<div class="modal fade" id="loginModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title">Login to NDA Auto Emporium</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="mb-3">
+            <input type="email" class="form-control bg-secondary text-light" id="loginEmail" placeholder="Email" required>
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control bg-secondary text-light" id="loginPassword" placeholder="Password" required>
+          </div>
+          <button type="submit" class="btn btn-danger w-100">Become a Member</button>
+        </form>
+        <div id="loginMessage" class="mt-3 text-center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Firebase SDK -->
+  <script type="module" src="./firebase-config.js"></script>
+  <script type="module" src="./auth.js"></script>
+
+</body>
+</html>
